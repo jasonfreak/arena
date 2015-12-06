@@ -1,0 +1,76 @@
+Problem Statement
+
+This problem statement contains superscripts that may not display properly outside the applet.
+
+Kitayuta Mart is the largest supermarket in Shuseki Kingdom, offering a great variety of food and household products. The main products are fruits, especially apples. The store sells K kinds of apples, numbered from 1 to K. The price system is a little special: the original price of an apple of kind i (1 <= i <= K) is i yen (the currency of the kingdom). However, if a customer wants to buy more than one apple of kind i, the second apple will cost 2*i yen, the third apple will cost 22*i yen, and so on. In general, if a customer is buying n apples of kind i, the actual price of the j-th (1 <= j <= n) apple will be 2j-1*i yen. The store has a sufficient supply of each kind of apples.
+
+Lun the dog loves apples. She wants to buy N apples at Kitayuta Mart. The kinds of apples does not matter to her, thus she will choose N apples so that the total price calculated using the above formula is minimized. You are given two integers: N and K. Find and return the actual price (NOT the original price) of the apple with the highest actual price among the apples that she will buy modulo 1,000,000,007.
+Definition
+
+Class:
+KitayutaMart
+Method:
+lastPrice
+Parameters:
+integer, integer
+Returns:
+integer
+Method signature:
+def lastPrice(self, N, K):
+
+Limits
+
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Notes
+-
+It can be shown that the answer is unique.
+Constraints
+-
+N will be between 1 and 1,000,000,000, inclusive.
+-
+K will be between 1 and 1,000,000,000, inclusive.
+Examples
+0)
+
+
+3
+1
+Returns: 4
+The store sells only one kind of apples. Their original price is 1 yen. She will buy three of them, and the most expensive one will cost 22*1 = 4 yen.
+1)
+
+
+3
+2
+Returns: 2
+In this case, another kind of apples is also on sale. Instead of buying three of kind 1, she can buy two of kind 1 and one of kind 2. Their costs will be 1, 2, and 2 yen, so the most expensive apple in this case only costs 2 yen.
+2)
+
+
+5
+3
+Returns: 4
+This time, yet another kind of apples is available, and she needs five apples. There are two options:
+two of kind 1, two of kind 2, one of kind 3
+three of kind 1, one of kind 2, one of kind 3
+In either way, she will have to pay 4 yen for the most expensive apple.
+3)
+
+
+1000000000
+1
+Returns: 570312504
+In this extreme case, the price of an apple will reach 2999999999 yen.
+4)
+
+
+987654321
+876543210
+Returns: 493827168
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

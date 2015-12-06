@@ -1,0 +1,87 @@
+Problem Statement
+
+Cat Snuke and wolf Sothe are playing the Connecting Game.
+ 
+The Connecting Game is played on a rectangular grid that is divided into unit square cells. The grid is divided into some regions. Each cell belongs into exactly one of those regions. Each region is 4-connected (see Notes for a formal definition).
+ 
+You are given a String[] board that describes the division of the grid into regions. Each character in board represents one of the cells. Cells that are represented by the same character belong into the same region.
+ 
+Initially, the entire grid is colorless. The game consists of two steps. In the first step, Snuke colors some of the regions red. In the second step, Sothe colors all remaining regions blue. (Within each region, all cells must have the same color.) Sothe wins if there is a path (see Notes for a formal definition) of blue cells from the top row to the bottom row. Otherwise, Snuke wins.
+ 
+You are given the String[] board. Compute and return the smallest number of cells Snuke can color red in order to win the game.
+ 
+(Note that Snuke cannot simply color individual cells, he must color entire regions. Also note that we are interested in minimizing the total number of cells, not the number of regions Snuke colors.)
+Definition
+
+Class:
+ConnectingGameDiv2
+Method:
+getmin
+Parameters:
+String[]
+Returns:
+int
+Method signature:
+int getmin(String[] board)
+(be sure your method is public)
+Limits
+
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Notes
+-
+A path is a sequence of cells such that each pair of consecutive cells shares a common side.
+-
+A region is 4-connected if for any two cells A and B in that region there is a path that starts with A, ends with B, and only contains cells from that region.
+Constraints
+-
+board will contain between 1 and 50 elements, inclusive.
+-
+Each element in board will contain between 1 and 50 characters, inclusive.
+-
+All elements in board will have the same length.
+-
+Each character in board will be a letter or a digit ('a'-'z', 'A'-'Z', or '0'-'9').
+-
+Each of the regions in board will be 4-connected.
+Examples
+0)
+
+
+{"AA"
+,"BC"}
+Returns: 2
+If Snuke colors 0 or 1 cells red, he will lose the game. He can win the game by coloring 2 cells red. One possibility is to color the two 'A' cells red.
+1)
+
+
+{"AAB"
+,"ACD"
+,"CCD"}
+Returns: 4
+Here, one optimal solution is to color the regions 'B' and 'C' red. There will be 1 + 3 = 4 red cells.
+2)
+
+
+{"iii"
+,"iwi"
+,"iii"}
+Returns: 8
+
+3)
+
+
+{"rng58"
+,"Snuke"
+,"Sothe"}
+Returns: 6
+
+4)
+
+
+{"yyAArJqjWTH5","yyEEruYYWTHG","hooEvutpkkb2","OooNgFFF9sbi","RRMNgFL99Vmm","R76XgFF9dVVV","SKnZUPf88Vee"}
+Returns: 14
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

@@ -1,0 +1,74 @@
+Problem Statement
+
+You are given two integers: N and K. Lun the dog is interested in the undirected graphs that satisfy the following conditions:
+The graph has exactly N vertices, labeled from 0 to N-1. Each vertex has a unique label.
+The graph has no loops (edges connected at both ends to the same vertex) and no more than one edge between any two different vertices.
+The graph has exactly K bridges (edges whose deletion increases its number of connected components).
+Find and return the number of these graphs modulo 1,000,000,007.
+Definition
+
+Class:
+Fragile
+Method:
+countGraphs
+Parameters:
+integer, integer
+Returns:
+integer
+Method signature:
+def countGraphs(self, N, K):
+
+Limits
+
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Notes
+-
+Two graphs are considered different if and only if there exists a pair of vertices such that one of the graphs contains an edge between them, and the other does not.
+Constraints
+-
+N will be between 1 and 50, inclusive.
+-
+K will be between 0 and N-1, inclusive.
+Examples
+0)
+
+
+3
+2
+Returns: 3
+The following three graphs satisfy the conditions:
+
+ 
+1)
+
+
+4
+0
+Returns: 15
+The following 15 graphs satisfy the conditions:
+
+ 
+2)
+
+
+5
+2
+Returns: 195
+The following is some of the graphs that satisfy the conditions:
+
+ 
+
+Here, bridges are painted in brown, and "x n" represents that there are n graphs that are isomorphic to that graph.
+3)
+
+
+50
+25
+Returns: 353637389
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

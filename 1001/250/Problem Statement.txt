@@ -1,0 +1,71 @@
+Problem Statement
+
+We call a pair of strings (s, t) "wood" if t is contained in s as a subsequence. (See Notes for a formal definition.)
+ 
+Given strings s and t, return the string "Yep, it's wood." (quotes for clarity) if the pair (s, t) is wood and "Nope." otherwise.
+Definition
+
+Class:
+IdentifyingWood
+Method:
+check
+Parameters:
+string, string
+Returns:
+string
+Method signature:
+def check(self, s, t):
+
+Limits
+
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Notes
+-
+String t is contained in string s as a subsequence if we can obtain t by removing zero or more (not necessarily consecutive) characters from s.
+Constraints
+-
+s and t will consist only of lowercase English letters.
+-
+s and t will each be between 1 and 10 characters long, inclusive.
+Examples
+0)
+
+
+"absdefgh"
+"asdf"
+Returns: "Yep, it's wood."
+
+1)
+
+
+"oxoxoxox"
+"ooxxoo"
+Returns: "Nope."
+
+2)
+
+
+"oxoxoxox"
+"xxx"
+Returns: "Yep, it's wood."
+
+3)
+
+
+"qwerty"
+"qwerty"
+Returns: "Yep, it's wood."
+
+4)
+
+
+"string"
+"longstring"
+Returns: "Nope."
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
