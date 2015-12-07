@@ -1,0 +1,55 @@
+Problem Statement
+
+Cat Snuke has learned that the number of ways to choose three things from x identical things is x(x-1)(x-2)/6. It means that the polynomial x(x-1)(x-2) is divisible by 6 for any integer x. He defined the greatest common divisor (GCD) of a nonzero polynomial P as the maximal integer d such that P(x) is always divisible by d for any integer x. For example, the GCD of P(x) = x(x-1)(x-2) is 6, because P(x) is always divisible by 6 and no bigger integer divides all P(x).  You want to compute the GCD of a polynomial P that is given as a product of many linear terms. You are given a string s that describes P. Construct P as follows: Start with P(x)=1 for all x. For each valid i, the character s[i] will be between '0' and '9', inclusive. Interpret it as a digit d[i] between 0 and 9, inclusive. Multiply P by the term (x-i)^d[i].  Compute the GCD of the polynomial P, and return it modulo 1,000,000,007.
+Definition
+
+Class:
+PolynomialGCD
+Method:
+gcd
+Parameters:
+string
+Returns:
+integer
+Method signature:
+def gcd(self, s):
+
+Limits
+
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Constraints
+-
+s will contain between 1 and 10,000 characters, inclusive.
+-
+Each character in s will be between '0' and '9', inclusive.
+Examples
+0)
+
+
+"111"
+Returns: 6
+P(x) = x(x-1)(x-2). The GCD of this polynomial is 6 as written in the statement.
+1)
+
+
+"00000"
+Returns: 1
+P(x) = 1.
+2)
+
+
+"2014"
+Returns: 16
+P(x) = (x-0)^2 * (x-1)^0 * (x-2)^1 * (x-3)^4 = x^2 * (x-2) * (x-3)^4.
+3)
+
+
+"31415926535"
+Returns: 659897170
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

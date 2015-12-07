@@ -1,0 +1,94 @@
+Problem Statement
+
+You are given an integer N and a tuple (integer) pos. We are interested in some permutations of the set {1,2,...,N}. A permutation p is called good if the following condition is satisfied: for each valid k, we have p(k) < p(k+1) if and only if k is an element of pos.
+Return the number of good permutations, modulo 1,000,000,007.
+Definition
+
+Class:
+PermutationCounts
+Method:
+countPermutations
+Parameters:
+integer, tuple (integer)
+Returns:
+integer
+Method signature:
+def countPermutations(self, N, pos):
+
+Limits
+
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Constraints
+-
+N will be between 1 and 1,000,000, inclusive.
+-
+pos will contain between 0 and min(N-1, 2500) elements, inclusive.
+-
+Elements of pos will be distinct.
+-
+Each element of pos will be between 1 and N-1, inclusive.
+Examples
+0)
+
+
+5
+{3}
+Returns: 9
+Given that pos = {3}, we are looking for permutations where p(1) > p(2), p(2) > p(3), p(3) < p(4), and p(4) > p(5). Thus, the good permutations are the following ones:
+{3,2,1,5,4}
+{4,2,1,5,3}
+{4,3,1,5,2}
+{4,3,2,5,1}
+{5,2,1,4,3}
+{5,3,1,4,2}
+{5,3,2,4,1}
+{5,4,1,3,2}
+{5,4,2,3,1}
+1)
+
+
+13
+{12,11,10,9,8,7,6,5,4,3,2,1}
+Returns: 1
+
+2)
+
+
+13
+{}
+Returns: 1
+
+3)
+
+
+9
+{2,4,5}
+Returns: 1421
+
+4)
+
+
+80
+{31,41,59,26,53,58,9,79,32,3,8,46}
+Returns: 82650786
+
+5)
+
+
+875
+{295,311,98,345,420,547,646,734,380,325,608,783,141,65,305,437,769,252,44,
+872,123,6,50,507,450,426,343,740,69,695,101,607,597,535,342,307,329,837,803,
+237,459,444,498,15,712,134,473,14,715,223,787,192,710,750,193,293,242,652,
+212,580,545,488,506,533,774,460,285,534,350,210,559,805,686,67,159,541,706,
+514,657,801,373,754,310,800,589,736,863,675,254,283,604,27,628,103,81,235,
+677,461,609,30,581,75,756,688,262,563,679,21,217,515,836,868,13,728,717,
+309,267,767,259,414,332,744,129,859,4,179,632,415,278,812,79,77,784,573,433,
+865,407,121,477,567,790,127,593,57,674,114,239,599,552,738}
+Returns: 169176190
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
