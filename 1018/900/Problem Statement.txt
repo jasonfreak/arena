@@ -1,0 +1,89 @@
+Problem Statement
+
+We are looking for a square matrix with some special properties:
+The matrix has n rows (and therefore n columns).
+Each entry in the matrix is either 0 or 1.
+Some of the 1s are given in advance.
+The square of the matrix must be the zero matrix (i.e., the matrix in which all entries are zeros). See Notes for a formal definition.
+You are given the integer n. Rows of the matrix are numbered 1 through n. Columns of the matrix are also numbered 1 through n.
+You are also given two tuple (integer)s: r and c. For each valid i, the entry in row r[i] and column c[i] is a 1.
+Compute and return the number of matrices that have the given properties, modulo 1,000,000,007.
+Definition
+
+Class:
+SquareOfSquareMatrix
+Method:
+count
+Parameters:
+integer, tuple (integer), tuple (integer)
+Returns:
+integer
+Method signature:
+def count(self, n, r, c):
+
+Limits
+
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Notes
+-
+Given two n times n matrices B and C with rows and columns numbered as in the problem statement, their product B*C is the n times n matrix P such that for each i and j, P[i][j] is the sum of B[i][k]*C[k][j] over all k from 1 to n.
+-
+The square of a square matrix A is the matrix A*A.
+Constraints
+-
+n will be between 1 and 500, inclusive.
+-
+The number of elements in r will be between 0 and 500, inclusive.
+-
+The number of elements in c will be the same as the number of elements in r.
+-
+All elements in r and c will be between 1 and n, inclusive.
+-
+All ordered pairs (r[i], c[i]) will be distinct.
+Examples
+0)
+
+
+2
+{}
+{}
+Returns: 3
+We do not know anything about the matrix, except for its dimension. There are three matrices that have the desired properties: {{0,0},{0,0}}; {{0,1},{0,0}}; and {{0,0},{1,0}}.
+1)
+
+
+3
+{1}
+{1}
+Returns: 0
+There is no valid matrix. The square of any matrix that matches the input must have a positive value in row 1 column 1, so it cannot be the zero matrix.
+2)
+
+
+3
+{1}
+{2}
+Returns: 3
+
+3)
+
+
+400
+{}
+{}
+Returns: 630758192
+
+4)
+
+
+10
+{1,1,2,2,3}
+{4,5,4,6,6}
+Returns: 9800720
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

@@ -1,0 +1,86 @@
+
+Problem Statement
+
+Rabbits are going to play a game on a board with a rectangular grid. Each cell of the board is either empty or full. You are given a String[] board, where the j-th character of the i-th element (0-based indices) is '.' if the cell in the i-th row and the j-th column (we call this cell (i, j)) is empty, or '#' if cell (i, j) is full. The distance between two cells is the Euclidean distance between their centers. Formally, the distance between the cells (i1, j1) and (i2, j2) is the square root of (i1 - i2)^2 + (j1 - j2)^2. (Note that the full cells do not act as obstacles.)  There are r rabbits, numbered 1 through r. In the increasing order of their numbers, each rabbit chooses an empty cell uniformly at random and moves into that cell. Note that cells chosen by previous rabbits are no longer considered to be empty.  After all rabbits chose their cells, let's define the values f(1), f(2), ..., f(r) as follows: For each X = 1, 2, ..., r, the value f(X) is the number of the rabbit that is closest to rabbit X. In case there is a tie, we prefer the rabbit with the smallest row index, and if there is still a tie, we prefer the rabbit with the smallest column index.  Let's construct an undirected graph with r vertices, numbered 1 through r. The graph has exactly r edges: for each X = 1, 2, ..., r, we add an edge connecting vertex X and vertex f(X). Calculate and return the expected number of connected components of this graph.
+Definition
+
+Class:
+ClosestRabbit
+Method:
+getExpected
+Parameters:
+String[], int
+Returns:
+double
+Method signature:
+double getExpected(String[] board, int r)
+(be sure your method is public)
+Limits
+
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Notes
+-
+A connected component of a graph is a set of vertices where every pair of vertices has a path connecting them.
+-
+The returned value must have an absolute or relative error less than 1e-9.
+Constraints
+-
+board will contain between 1 and 20 elements, inclusive.
+-
+Each element of board will contain between 1 and 20 characters, inclusive.
+-
+Each element of board will contain the same number of characters.
+-
+Each character in board will be either '.' or '#'.
+-
+r will be between 2 and the number of '.'s in board, inclusive.
+Examples
+0)
+
+
+{".#.#."}
+2
+Returns: 1.0
+No matter how the two rabbits choose their cells, we will always have f(1) = 2 and f(2) = 1. The graph will always contain two edges, each connecting the vertices 1 and 2. Therefore, the number of connected components is always 1.
+1)
+
+
+{"..###.",
+ ".###.#"}
+4
+Returns: 1.6
+Here are two examples of rabbits' positions (represented by 1, 2, 3, and 4):
+(a) 13###2  (b) 34###.
+    .###4#      2###1#
+In (a), f(1) = 3, f(2) = 4, f(3) = 1, and f(4) = 2 holds and the graph has two connected components. In (b), f(1) = 4, f(2) = 3, f(3) = 4, and f(4) = 3 holds and the graph has one connected component.
+2)
+
+
+{"..###.",
+ ".###.#"}
+5
+Returns: 2.0
+
+3)
+
+
+{".....",
+ "#...."}
+4
+Returns: 1.253968253968254
+
+4)
+
+
+{".#####.#####..#....#",
+ "#......#....#.##..##",
+ ".####..#####..#.##.#",
+ ".....#.#...#..#....#",
+ "#####..#....#.#....#"}
+19
+Returns: 5.77311527122319
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

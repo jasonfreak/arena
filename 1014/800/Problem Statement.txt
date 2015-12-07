@@ -1,0 +1,84 @@
+Problem Statement
+
+Alice and Bob are in a game show. They have just advanced to the prize round. This round involves a large wheel called the "Wheel of Fortune". The wheel is divided into N sectors, numbered 0 through N-1 clockwise. All sectors have the same size. During the round Alice and Bob don't see the wheel - it is only visible to the host and the audience.
+At the beginning of the round, the score of each sector is zero. The host then spins the wheel one or more times. After each spin he increases the score of some randomly chosen sectors.
+More precisely, this process can be divided into a sequence of rounds. For each i, round i (0-based index) looks as follows: First, the host spins the wheel to select a sector of the wheel uniformly at random. Then, the host increases the score of s[i] sectors by 1 each, starting at the selected sector and proceeding clockwise. In other words, the host selects a segment of s[i] consecutive sectors uniformly at random, and he increases the score of each sector that belongs into the selected segment. The random choices made in different rounds are mutually independent.
+After the last round, Alice and Bob (still without seeing the wheel) get to claim their prize. This works as follows:
+Alice chooses a sector of the wheel. (I.e., she announces a number between 0 and N-1, inclusive.)
+The host announces the score of this sector.
+Bob chooses a different sector of the wheel.
+The host announces the score of that sector.
+Alice and Bob's final score is the sum of the two scores announced by the host. Alice and Bob want to maximize their final score. Note that Bob's choice in step 3 can depend on the number announced by the host in step 2.
+You are given the integer N and the tuple (integer) s. Return the expected final score of the game, given that Alice and Bob play optimally.
+Definition
+
+Class:
+WheelofFortune
+Method:
+maxExpectedValue
+Parameters:
+integer, tuple (integer)
+Returns:
+float
+Method signature:
+def maxExpectedValue(self, N, s):
+
+Limits
+
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Notes
+-
+Your return value must have an absolute or relative error smaller than 1e-6
+Constraints
+-
+N will be between 2 and 300, inclusive.
+-
+s will contain between 1 and 300 elements, inclusive.
+-
+Each element of s will be between 1 and N, inclusive.
+Examples
+0)
+
+
+4
+{2}
+Returns: 1.25
+This wheel is divided into 4 sectors. The host will increment two adjacent sectors. One optimal strategy looks as follows:
+Alice chooses sector 2.
+With probability 50%, Alice's score is 0. If this is the case, Bob chooses sector 0 because he can be sure that its score is 1.
+With probability 50%, Alice's score is 1. If this is the case, the other sector with score 1 is either sector 1 or sector 3. Bob chooses one of them and scores 1 with probability 50%.
+Their expected score with this strategy is 0.5 * 1 + 0.5 * (0.5*1 + 0.5*2) = 1.25, and no other strategy is better.
+1)
+
+
+6
+{1,1,1,1,1,1}
+Returns: 2.0000000000000004
+
+2)
+
+
+20
+{1,20,1,20,1}
+Returns: 4.299999999999999
+
+3)
+
+
+10
+{3,1,4,1,5,9,2,6,5,3,5,8,9,7,9,3,2,3,8,4,6,2,6,4,3,3,8,3,2,7,9,5}
+Returns: 31.973469385798197
+
+4)
+
+
+15
+{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+Returns: 16.691531334568044
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
