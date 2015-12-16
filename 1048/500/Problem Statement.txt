@@ -1,0 +1,99 @@
+Problem Statement
+
+There is a small IOI training camp for students. The camp is N days long. The days are numbered 0 through N-1. There are M students taking part in the camp. The students are labeled using the first M uppercase English letters. (For example, if there are M=3 students, we will call them 'A', 'B', and 'C'.)
+During lunch, the students sit in a single row along one long table. There are M different positions at the table. The positions are numbered 0 through M-1. You are given a tuple (string) a with the seating arrangements: during lunch on day i, the person sitting on position j will be a[i][j].
+The camp must provide lunch for all people on all days. There are three different lunch plans:
+A double lunch for two people on the same day. The two people have to sit next to each other on that day.
+A double lunch for one person in two consecutive days.
+A single lunch for one person.
+Two methods of providing lunch are considered different if for some d and P the lunch plans for person P on day d are different. Let X be the number of different ways in which the camp can provide lunch to the participants. Return the value (X modulo 1,000,000,007).
+Definition
+
+Class:
+CampLunch
+Method:
+count
+Parameters:
+integer, integer, tuple (string)
+Returns:
+integer
+Method signature:
+def count(self, N, M, a):
+
+Limits
+
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Constraints
+-
+N will be between 1 and 16, inclusive.
+-
+M will be between 1 and 16, inclusive.
+-
+The number of elements in a will be exactly N.
+-
+The length of elements in a will be exactly M.
+-
+Each element of a will be a permutation of the first M uppercase English letters.
+Examples
+0)
+
+
+2
+2
+{"AB","AB"}
+Returns: 7
+There are two days and two students. In this setting there are 7 different ways to provide lunch:
+Both students use plan 3 each day.
+Student A uses a single plan 2 for both days, student B uses plan 3 twice.
+Student A uses plan 3 twice, student B uses a single plan 2 for both days.
+Each student uses a single plan 2.
+On day 0 both students are served by a single plan 1. On day 1 each student uses their own plan 3.
+On day 0 each student uses their own plan 3. On day 1 both students are served by a single plan 1.
+Each day both students are served by a single plan 1.
+1)
+
+
+2
+3
+{"ABC","ABC"}
+Returns: 22
+
+2)
+
+
+2
+3
+{"ABC","BAC"}
+Returns: 21
+Note that students A and C cannot use the same plan 1 on day 0, as they are not sitting next to each other.
+However, they are able to use the same plan 1 on day 1 when there is a different seating arrangement.
+3)
+
+
+1
+1
+{"A"}
+Returns: 1
+
+4)
+
+
+1
+10
+{"ABDEFHIGJC"}
+Returns: 89
+
+5)
+
+
+16
+16
+{"ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP","ABCDEFGHIJKLMNOP"}
+Returns: 950052677
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
