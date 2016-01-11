@@ -1,0 +1,76 @@
+Problem Statement
+
+Bob is going to create a graph with N nodes. The graph will be constructed in two steps. First, Bob will take N isolated vertices, label them 1 through N and color each of them using one of K colors. Then, Bob will add some directed edges to the graph. For each i between 2 and N, inclusive, Bob may choose a single value j < i such that the nodes i and j have different colors. If he does, he will add the edge from i to j to his graph. Note that Bob may choose not to add any edge from node i, even if there are some valid choices of j.
+Two graphs are considered the same if they have the same node colors and the same set of edges.
+You are given the long integers N and K. You are also given an integer M. Compute and return the number of different graphs Bob may construct, modulo M.
+Definition
+
+Class:
+ColorfulLineGraphs
+Method:
+countWays
+Parameters:
+long integer, long integer, integer
+Returns:
+integer
+Method signature:
+def countWays(self, N, K, M):
+
+Limits
+
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Constraints
+-
+N will be between 1 and 1,000,000,000,000 (10^12), inclusive.
+-
+K will be between 1 and 1,000,000,000,000 (10^12), inclusive.
+-
+M will be between 2 and 1,000,000 (10^6), inclusive.
+Examples
+0)
+
+
+3
+2
+100000
+Returns: 24
+The 24 different graphs are shown below. In each picture, the vertices have labels 1, 2, 3 from the left to the right.
+ 
+1)
+
+
+15
+3
+1000000
+Returns: 510625
+
+2)
+
+
+100000
+100000
+999999
+Returns: 185185
+
+3)
+
+
+1000000000000
+6
+1000000
+Returns: 109376
+
+4)
+
+
+5000
+1000000000000
+314159
+Returns: 202996
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
